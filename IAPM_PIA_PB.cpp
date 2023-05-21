@@ -1,5 +1,5 @@
 /*
-PRODUCTO INTEGRADOR DE APRENDIZAJE. Itzel AnahÌ PÈrez Morales. 2001877
+PRODUCTO INTEGRADOR DE APRENDIZAJE. Itzel Anah√≠ P√©rez Morales. 2001877
 */
 
 #include <iostream> 
@@ -27,7 +27,7 @@ int registros = 0, numartaux = 0, contador = 0, articuloaux = 0;
 
 bool statusaux, aux = true;
 
-// F U N C I O N E S  Q U E  S E  U S A R ¡ N
+// F U N C I O N E S  Q U E  S E  U S A R √Å N
 
 void alta(); //C A S O  1
 void baja(); //C A S O  2
@@ -37,12 +37,12 @@ void archivos();//C A S O  6
 
 int main()
 {
-	setlocale(LC_CTYPE, "Spanish"); //PermÌte acentos y la —
+	setlocale(LC_CTYPE, "Spanish"); //Perm√≠te acentos y la √ë
 	int op = 0;
 
 	do
 	{
-		printf("\t *.-| D O N K E Y  G A M E S |-.* \n\tSeleccione una opciÛn\n (1) Alta de artÌculos\n (2) Baja de artÌculos\n (3) ModificaciÛn de artÌculos\n (4) Lista de productos\n (5) Limpiar pantalla\n (6) Salir\n");
+		printf("\t *.-| D O N K E Y  G A M E S |-.* \n\tSeleccione una opci√≥n\n (1) Alta de art√≠culos\n (2) Baja de art√≠culos\n (3) Modificaci√≥n de art√≠culos\n (4) Lista de productos\n (5) Limpiar pantalla\n (6) Salir\n");
 		scanf_s("%d", &op);
 
 		switch (op)
@@ -73,7 +73,7 @@ int main()
 			break;
 
 		default:
-			printf("\n\n(!) ERROR: OpciÛn inv·lida \n\n");
+			printf("\n\n(!) ERROR: Opci√≥n inv√°lida \n\n");
 			break;
 		}
 	} while (op != 6);
@@ -83,21 +83,21 @@ int main()
 void alta()
 {
 	int opcasouno = 0;
-	printf("\t *.| R E G I S T R O |.* \n øCu·ntos artÌculos dar· de alta?\n");
+	printf("\t *.| R E G I S T R O |.* \n ¬øCu√°ntos art√≠culos dar√° de alta?\n");
 	scanf_s("%d", &registros);
 
 	int total_antes = contador;
 	if (aux!= true) 
 	{
-		articulos_anteriores = new Informacion[contador];//arreglo que llevar· las posiciones anteriores
+		articulos_anteriores = new Informacion[contador];//arreglo que llevar√° las posiciones anteriores
 		for (int i = 0; i < contador; i++) 
 		{
 			articulos_anteriores[i] = articulo[i]; // se copian los datos de articulo en articulos_anteriores
 		}
 		delete[] articulo;
 	}
-	contador = contador + registros; //contador llevar· todos los artÌculos registrados 
-	articulo = new Informacion[contador]; //define el int como valor que puede cambiar, InformaciÛn tendr· x posiciones 
+	contador = contador + registros; //contador llevar√° todos los art√≠culos registrados 
+	articulo = new Informacion[contador]; //define el int como valor que puede cambiar, Informaci√≥n tendr√° x posiciones 
 
 	if (aux!= true) 
 	{
@@ -108,17 +108,17 @@ void alta()
 
 	for (int i = articuloaux; i < contador; i++) 
 	{
-		printf("\n--------- A R T Õ C U L O  %d ---------\n", (i + 1));
-		printf("\n| Ingrese el nombre del artÌculo: \n");
+		printf("\n--------- A R T √ç C U L O  %d ---------\n", (i + 1));
+		printf("\n| Ingrese el nombre del art√≠culo: \n");
 		while (getchar() != '\n'); //a diferencia del cin.ignore este lee la primera letra
 		getline(cin, articulo[i].nombre);
 
-		printf("\n| Ingrese el aÒo de lanzamiento: \n");
+		printf("\n| Ingrese el a√±o de lanzamiento: \n");
 		scanf_s("%d", &articulo[i].fecha);
 
 		do
 		{
-			printf("\n| Seleccione la clasificaciÛn:\n (1) A: Apto para todo p˙blico \n (2) B: Para mayores de 12 aÒos\n (3) B15: Para mayores de 15 aÒos \n (4) C: Para mayores de 18 aÒos\n (5) D: Adultos \n");
+			printf("\n| Seleccione la clasificaci√≥n:\n (1) A: Apto para todo p√∫blico \n (2) B: Para mayores de 12 a√±os\n (3) B15: Para mayores de 15 a√±os \n (4) C: Para mayores de 18 a√±os\n (5) D: Adultos \n");
 			scanf_s("%d", &articulo[i].clasificacion);
 		} while (articulo[i].clasificacion < 1 || articulo[i].clasificacion > 5);
 
@@ -132,15 +132,15 @@ void alta()
 			scanf_s("%d", &articulo[i].consola);
 		} while (articulo[i].consola < 1 || articulo[i].consola > 6);
 
-		printf("\n| CaracterÌsticas del producto: \n");
+		printf("\n| Caracter√≠sticas del producto: \n");
 		while (getchar() != '\n');
 		getline(cin, articulo[i].caracteristicas);
 
 		do
 		{
-			printf("\n| Especifique el gÈnero del videojuego: \n (1) AcciÛn\n (2) Aventura\n (3) Arcade\n (4) Carreras\n (5) Deportes\n (6) Estrategia\n (7) SimulaciÛn\n (8) Terror\n");
+			printf("\n| Especifique el g√©nero del videojuego: \n (1) Acci√≥n\n (2) Aventura\n (3) Arcade\n (4) Carreras\n (5) Deportes\n (6) Estrategia\n (7) Simulaci√≥n\n (8) Terror\n");
 			scanf_s("%d", &articulo[i].genero);
-		} while (articulo[i].genero < 1 || articulo[i].genero > 7);
+		} while (articulo[i].genero < 1 || articulo[i].genero > 8);
 
 		printf("\n| Precio unitario: \n");
 		scanf_s("%f", &articulo[i].precio);
@@ -148,8 +148,8 @@ void alta()
 		articulo[i].numeroarticulo = numartaux + 1;
 		numartaux += 1;
 	}
-	articuloaux = registros + articuloaux; // se declara igual que registros para que ahÌ comience el siguiente registro
-	aux = false; // en la siguiente vuelta se entrar· al ciclo del inicio
+	articuloaux = registros + articuloaux; // se declara igual que registros para que ah√≠ comience el siguiente registro
+	aux = false; // en la siguiente vuelta se entrar√° al ciclo del inicio
 	printf("\n\n *** Los datos se han guardado exitosamente *** \n\n");
 }
 
@@ -159,13 +159,13 @@ void baja()
 	int opcasodos = 0, numregis = 0;
 	do
 	{
-		printf("\n \t * . | B A J A  D E  P R O D U C T O | .*\n øEst· seguro de querer dar de baja un producto? \n \t (1) SI | (2) NO \n");
+		printf("\n \t * . | B A J A  D E  P R O D U C T O | .*\n ¬øEst√° seguro de querer dar de baja un producto? \n \t (1) SI | (2) NO \n");
 		scanf_s("%d", &opcasodos);
 	} while (opcasodos != 1 && opcasodos != 2);
 
 	if (opcasodos == 1)
 	{
-		printf("\n| Ingrese el n˙mero de registro del artÌculo | \n\n (!) UNA VEZ ELIMINADO EL REGISTRO DEL PRODUCTO NO SE PODR¡N RECUPERAR LOS DATOS\n");
+		printf("\n| Ingrese el n√∫mero de registro del art√≠culo | \n\n (!) UNA VEZ ELIMINADO EL REGISTRO DEL PRODUCTO NO SE PODR√ÅN RECUPERAR LOS DATOS\n");
 		scanf_s("%d", &numregis);
 		for (int i = 0; i < contador; i++)
 		{
@@ -185,14 +185,14 @@ void modificacion()
 	int opcasotres = 0, numregis = 0;
 	do
 	{
-		printf("\n \t * . | M O D I F I C A C I ” N  D E  P R O D U C T O S | .*\n øDesea modificar un producto? \n \t (1) SI | (2) NO \n");
+		printf("\n \t * . | M O D I F I C A C I √ì N  D E  P R O D U C T O S | .*\n ¬øDesea modificar un producto? \n \t (1) SI | (2) NO \n");
 		scanf_s("%d", &opcasotres);
 	} while (opcasotres != 1 && opcasotres != 2);
 	if (opcasotres == 1)
 	{
 		do
 		{
-			printf("\n| Ingrese el n˙mero de registro del artÌculo | \n");
+			printf("\n| Ingrese el n√∫mero de registro del art√≠culo | \n");
 			scanf_s("%d", &numregis);
 			for (int i = (numregis - 1); i == (numregis - 1); i++)
 			{
@@ -210,7 +210,7 @@ void modificacion()
 
 		do
 		{
-			printf("| øQuÈ desea modificar?\n (1) Nombre\n (2) AÒo\n (3) ClasificaciÛn\n (4) DescripciÛn\n (5) Consolas compatibles\n (6) CaracterÌsticas\n (7) GÈnero\n (8) Precio Unitario \n");
+			printf("| ¬øQu√© desea modificar?\n (1) Nombre\n (2) A√±o\n (3) Clasificaci√≥n\n (4) Descripci√≥n\n (5) Consolas compatibles\n (6) Caracter√≠sticas\n (7) G√©nero\n (8) Precio Unitario \n");
 			scanf_s("%d", &opcasotres);
 			for (int i = 0; i < contador; i++)
 			{
@@ -225,14 +225,14 @@ void modificacion()
 						break;
 
 					case 2:
-						printf("\n| Ingrese el aÒo de lanzamiento: \n");
+						printf("\n| Ingrese el a√±o de lanzamiento: \n");
 						scanf_s("%d", &articulo[i].fecha);
 						break;
 
 					case 3:
 						do
 						{
-							printf("\n| Seleccione la clasificaciÛn:\n (1) A: Apto para todo p˙blico \n (2) B: Para mayores de 12 aÒos\n (3) B15: Para mayores de 15 aÒos \n (4) C: Para mayores de 18 aÒos\n (5) D: Adultos \n");
+							printf("\n| Seleccione la clasificaci√≥n:\n (1) A: Apto para todo p√∫blico \n (2) B: Para mayores de 12 a√±os\n (3) B15: Para mayores de 15 a√±os \n (4) C: Para mayores de 18 a√±os\n (5) D: Adultos \n");
 							scanf_s("%d", &articulo[i].clasificacion);
 						} while (articulo[i].clasificacion < 1 || articulo[i].clasificacion > 5);
 						break;
@@ -252,7 +252,7 @@ void modificacion()
 						break;
 
 					case 6:
-						printf("\n| CaracterÌsticas del producto: \n");
+						printf("\n| Caracter√≠sticas del producto: \n");
 						while (getchar() != '\n');
 						getline(cin, articulo[i].caracteristicas);
 						break;
@@ -260,7 +260,7 @@ void modificacion()
 					case 7:
 						do
 						{
-							printf("\n| Especifique el gÈnero del videojuego: \n (1) AcciÛn\n (2) Aventura\n (3) Arcade\n (4) Carreras\n (5) Deportes\n (6) Estrategia\n (7) SimulaciÛn\n (8) Terror\n");
+							printf("\n| Especifique el g√©nero del videojuego: \n (1) Acci√≥n\n (2) Aventura\n (3) Arcade\n (4) Carreras\n (5) Deportes\n (6) Estrategia\n (7) Simulaci√≥n\n (8) Terror\n");
 							scanf_s("%d", &articulo[i].genero);
 						} while (articulo[i].genero < 1 || articulo[i].genero > 7);
 						break;
@@ -284,7 +284,7 @@ void lista()
 	int opcioncasocuatro = 0;
 	do
 	{
-		printf("\n~~~~~~~~~ øCÛmo desea que se muestren los artÌculos? ~~~~~~~~~\n (1) Por clasificaciÛn | (2) Por GÈnero | (3) Por Consola | (4) Mostrar todos los artÌculos \n");
+		printf("\n~~~~~~~~~ ¬øC√≥mo desea que se muestren los art√≠culos? ~~~~~~~~~\n (1) Por clasificaci√≥n | (2) Por G√©nero | (3) Por Consola | (4) Mostrar todos los art√≠culos \n");
 		scanf_s("%d", &opcioncasocuatro);
 	} while (opcioncasocuatro < 1 || opcioncasocuatro > 4);
 
@@ -293,7 +293,7 @@ void lista()
 	case 1:
 		do
 		{
-			printf("\n ~~~~~~~~~ øQuÈ clasificaciÛn filtrar·? ~~~~~~~~~ \n (1) A: Apto para todo p˙blico \n (2) B: Para mayores de 12 aÒos\n (3) B15: Para mayores de 15 aÒos \n (4) C: Para mayores de 18 aÒos\n (5) D: Adultos \n");
+			printf("\n ~~~~~~~~~ ¬øQu√© clasificaci√≥n filtrar√°? ~~~~~~~~~ \n (1) A: Apto para todo p√∫blico \n (2) B: Para mayores de 12 a√±os\n (3) B15: Para mayores de 15 a√±os \n (4) C: Para mayores de 18 a√±os\n (5) D: Adultos \n");
 			scanf_s("%d", &opcioncasocuatro);
 		} while (opcioncasocuatro < 1 || opcioncasocuatro > 5);
 
@@ -307,9 +307,9 @@ void lista()
 			{
 				if (articulo[i].clasificacion == opcioncasocuatro)
 				{
-					printf(" \n -------------------------------\n\t N˙mero de artÌculo: %d \n", articulo[i].numeroarticulo);
+					printf(" \n -------------------------------\n\t N√∫mero de art√≠culo: %d \n", articulo[i].numeroarticulo);
 					printf("\t %s \n", articulo[i].nombre.c_str());
-					printf("- AÒo de lanzamiento: %d \n", articulo[i].fecha);
+					printf("- A√±o de lanzamiento: %d \n", articulo[i].fecha);
 					switch (articulo[i].consola)
 					{
 					case 1:
@@ -335,16 +335,16 @@ void lista()
 					switch (articulo[i].clasificacion)
 					{
 					case 1:
-						articulo[i].clasaux = "A: Apto para todo p˙blico";
+						articulo[i].clasaux = "A: Apto para todo p√∫blico";
 						break;
 					case 2:
-						articulo[i].clasaux = "B: Para mayores de 12 aÒos";
+						articulo[i].clasaux = "B: Para mayores de 12 a√±os";
 						break;
 					case 3:
-						articulo[i].clasaux = "B15: Para mayores de 15 aÒos";
+						articulo[i].clasaux = "B15: Para mayores de 15 a√±os";
 						break;
 					case 4:
-						articulo[i].clasaux = "C: Para mayores de 18 aÒos";
+						articulo[i].clasaux = "C: Para mayores de 18 a√±os";
 						break;
 					case 5:
 						articulo[i].clasaux = "D : Adultos";
@@ -354,7 +354,7 @@ void lista()
 					switch (articulo[i].genero)
 					{
 					case 1:
-						articulo[i].genaux = "AcciÛn";
+						articulo[i].genaux = "Acci√≥n";
 						break;
 					case 2:
 						articulo[i].genaux = "Aventura";
@@ -372,15 +372,15 @@ void lista()
 						articulo[i].genaux = "Estrategia";
 						break;
 					case 7:
-						articulo[i].genaux = "SimulaciÛn";
+						articulo[i].genaux = "Simulaci√≥n";
 						break;
 					case 8:
 						articulo[i].genaux = "Terror";
 						break;
 					}
 					printf("%s \n- Consolas compatibles: %s \n", articulo[i].descripcion.c_str(), articulo[i].consaux.c_str());
-					printf("- CaracterÌsticas: %s \n", articulo[i].caracteristicas.c_str());
-					printf("ClasificaciÛn: %s | GÈnero: %s \n", articulo[i].clasaux.c_str(), articulo[i].genaux.c_str());
+					printf("- Caracter√≠sticas: %s \n", articulo[i].caracteristicas.c_str());
+					printf("Clasificaci√≥n: %s | G√©nero: %s \n", articulo[i].clasaux.c_str(), articulo[i].genaux.c_str());
 					printf("- Precio unitario: $%5.2f \n- Precio final: $%5.2f \n\n", articulo[i].precio, articulo[i].total);
 				}
 			}
@@ -391,7 +391,7 @@ void lista()
 	case 2:
 		do
 		{
-			printf("\n ~~~~~~~~~ Seleccione un gÈnero ~~~~~~~~~ \n (1) AcciÛn\n (2) Aventura \n (3) Arcade\n (4) Carreras\n (5) Deportes\n (6) Estrategia\n (7) SimulaciÛn\n (8) Terror\n");
+			printf("\n ~~~~~~~~~ Seleccione un g√©nero ~~~~~~~~~ \n (1) Acci√≥n\n (2) Aventura \n (3) Arcade\n (4) Carreras\n (5) Deportes\n (6) Estrategia\n (7) Simulaci√≥n\n (8) Terror\n");
 			scanf_s("%d", &opcioncasocuatro);
 		} while (opcioncasocuatro < 1 || opcioncasocuatro > 8);
 		for (int i = 0; i < contador; i++)
@@ -404,9 +404,9 @@ void lista()
 			{
 				if (articulo[i].genero == opcioncasocuatro)
 				{
-					printf(" \n -------------------------------\n\t N˙mero de artÌculo: %d \n", articulo[i].numeroarticulo);
+					printf(" \n -------------------------------\n\t N√∫mero de art√≠culo: %d \n", articulo[i].numeroarticulo);
 					printf("\t %s \n", articulo[i].nombre.c_str());
-					printf("- AÒo de lanzamiento: %d \n", articulo[i].fecha);
+					printf("- A√±o de lanzamiento: %d \n", articulo[i].fecha);
 					switch (articulo[i].consola)
 					{
 					case 1:
@@ -432,16 +432,16 @@ void lista()
 					switch (articulo[i].clasificacion)
 					{
 					case 1:
-						articulo[i].clasaux = "A: Apto para todo p˙blico";
+						articulo[i].clasaux = "A: Apto para todo p√∫blico";
 						break;
 					case 2:
-						articulo[i].clasaux = "B: Para mayores de 12 aÒos";
+						articulo[i].clasaux = "B: Para mayores de 12 a√±os";
 						break;
 					case 3:
-						articulo[i].clasaux = "B15: Para mayores de 15 aÒos";
+						articulo[i].clasaux = "B15: Para mayores de 15 a√±os";
 						break;
 					case 4:
-						articulo[i].clasaux = "C: Para mayores de 18 aÒos";
+						articulo[i].clasaux = "C: Para mayores de 18 a√±os";
 						break;
 					case 5:
 						articulo[i].clasaux = "D : Adultos";
@@ -451,7 +451,7 @@ void lista()
 					switch (articulo[i].genero)
 					{
 					case 1:
-						articulo[i].genaux = "AcciÛn";
+						articulo[i].genaux = "Acci√≥n";
 						break;
 					case 2:
 						articulo[i].genaux = "Aventura";
@@ -469,15 +469,15 @@ void lista()
 						articulo[i].genaux = "Estrategia";
 						break;
 					case 7:
-						articulo[i].genaux = "SimulaciÛn";
+						articulo[i].genaux = "Simulaci√≥n";
 						break;
 					case 8:
 						articulo[i].genaux = "Terror";
 						break;
 					}
 					printf("%s \n- Consolas compatibles: %s \n", articulo[i].descripcion.c_str(), articulo[i].consaux.c_str());
-					printf("- CaracterÌsticas: %s \n", articulo[i].caracteristicas.c_str());
-					printf("ClasificaciÛn: %s | GÈnero: %s \n", articulo[i].clasaux.c_str(), articulo[i].genaux.c_str());
+					printf("- Caracter√≠sticas: %s \n", articulo[i].caracteristicas.c_str());
+					printf("Clasificaci√≥n: %s | G√©nero: %s \n", articulo[i].clasaux.c_str(), articulo[i].genaux.c_str());
 					printf("- Precio unitario: $%5.2f \n- Precio final: $%5.2f \n\n", articulo[i].precio, articulo[i].total);
 				}
 			}
@@ -500,9 +500,9 @@ void lista()
 			{
 				if (articulo[i].consola == opcioncasocuatro)
 				{
-					printf(" \n -------------------------------\n\t N˙mero de artÌculo: %d \n", articulo[i].numeroarticulo);
+					printf(" \n -------------------------------\n\t N√∫mero de art√≠culo: %d \n", articulo[i].numeroarticulo);
 					printf("\t %s \n", articulo[i].nombre.c_str());
-					printf("- AÒo de lanzamiento: %d \n", articulo[i].fecha);
+					printf("- A√±o de lanzamiento: %d \n", articulo[i].fecha);
 					switch (articulo[i].consola)
 					{
 					case 1:
@@ -528,16 +528,16 @@ void lista()
 					switch (articulo[i].clasificacion)
 					{
 					case 1:
-						articulo[i].clasaux = "A: Apto para todo p˙blico";
+						articulo[i].clasaux = "A: Apto para todo p√∫blico";
 						break;
 					case 2:
-						articulo[i].clasaux = "B: Para mayores de 12 aÒos";
+						articulo[i].clasaux = "B: Para mayores de 12 a√±os";
 						break;
 					case 3:
-						articulo[i].clasaux = "B15: Para mayores de 15 aÒos";
+						articulo[i].clasaux = "B15: Para mayores de 15 a√±os";
 						break;
 					case 4:
-						articulo[i].clasaux = "C: Para mayores de 18 aÒos";
+						articulo[i].clasaux = "C: Para mayores de 18 a√±os";
 						break;
 					case 5:
 						articulo[i].clasaux = "D : Adultos";
@@ -547,7 +547,7 @@ void lista()
 					switch (articulo[i].genero)
 					{
 					case 1:
-						articulo[i].genaux = "AcciÛn";
+						articulo[i].genaux = "Acci√≥n";
 						break;
 					case 2:
 						articulo[i].genaux = "Aventura";
@@ -565,15 +565,15 @@ void lista()
 						articulo[i].genaux = "Estrategia";
 						break;
 					case 7:
-						articulo[i].genaux = "SimulaciÛn";
+						articulo[i].genaux = "Simulaci√≥n";
 						break;
 					case 8:
 						articulo[i].genaux = "Terror";
 						break;
 					}
 					printf("%s \n- Consolas compatibles: %s \n", articulo[i].descripcion.c_str(), articulo[i].consaux.c_str());
-					printf("- CaracterÌsticas: %s \n", articulo[i].caracteristicas.c_str());
-					printf("ClasificaciÛn: %s | GÈnero: %s \n", articulo[i].clasaux.c_str(), articulo[i].genaux.c_str());
+					printf("- Caracter√≠sticas: %s \n", articulo[i].caracteristicas.c_str());
+					printf("Clasificaci√≥n: %s | G√©nero: %s \n", articulo[i].clasaux.c_str(), articulo[i].genaux.c_str());
 					printf("- Precio unitario: $%5.2f \n- Precio final: $%5.2f \n\n", articulo[i].precio, articulo[i].total);
 				}
 			}
@@ -589,9 +589,9 @@ void lista()
 			}
 			else
 			{
-				printf(" \n -------------------------------\n\t N˙mero de artÌculo: %d \n", articulo[i].numeroarticulo);
+				printf(" \n -------------------------------\n\t N√∫mero de art√≠culo: %d \n", articulo[i].numeroarticulo);
 				printf("\t %s \n", articulo[i].nombre.c_str());
-				printf("- AÒo de lanzamiento: %d \n", articulo[i].fecha);
+				printf("- A√±o de lanzamiento: %d \n", articulo[i].fecha);
 				switch (articulo[i].consola)
 				{
 				case 1:
@@ -617,16 +617,16 @@ void lista()
 				switch (articulo[i].clasificacion)
 				{
 				case 1:
-					articulo[i].clasaux = "A: Apto para todo p˙blico";
+					articulo[i].clasaux = "A: Apto para todo p√∫blico";
 					break;
 				case 2:
-					articulo[i].clasaux = "B: Para mayores de 12 aÒos";
+					articulo[i].clasaux = "B: Para mayores de 12 a√±os";
 					break;
 				case 3:
-					articulo[i].clasaux = "B15: Para mayores de 15 aÒos";
+					articulo[i].clasaux = "B15: Para mayores de 15 a√±os";
 					break;
 				case 4:
-					articulo[i].clasaux = "C: Para mayores de 18 aÒos";
+					articulo[i].clasaux = "C: Para mayores de 18 a√±os";
 					break;
 				case 5:
 					articulo[i].clasaux = "D : Adultos";
@@ -636,7 +636,7 @@ void lista()
 				switch (articulo[i].genero)
 				{
 				case 1:
-					articulo[i].genaux = "AcciÛn";
+					articulo[i].genaux = "Acci√≥n";
 					break;
 				case 2:
 					articulo[i].genaux = "Aventura";
@@ -654,15 +654,15 @@ void lista()
 					articulo[i].genaux = "Estrategia";
 					break;
 				case 7:
-					articulo[i].genaux = "SimulaciÛn";
+					articulo[i].genaux = "Simulaci√≥n";
 					break;
 				case 8:
 					articulo[i].genaux = "Terror";
 					break;
 				}
 				printf("%s \n- Consolas compatibles: %s \n", articulo[i].descripcion.c_str(), articulo[i].consaux.c_str());
-				printf("- CaracterÌsticas: %s \n", articulo[i].caracteristicas.c_str());
-				printf("ClasificaciÛn: %s | GÈnero: %s \n", articulo[i].clasaux.c_str(), articulo[i].genaux.c_str());
+				printf("- Caracter√≠sticas: %s \n", articulo[i].caracteristicas.c_str());
+				printf("Clasificaci√≥n: %s | G√©nero: %s \n", articulo[i].clasaux.c_str(), articulo[i].genaux.c_str());
 				printf("- Precio unitario: $%5.2f \n- Precio final: $%5.2f \n\n", articulo[i].precio, articulo[i].total);
 			}
 		}
@@ -697,23 +697,23 @@ void archivos()
 			}
 			else
 			{
-				archivo << "N⁄M. DE ARTÕCULO: ";
+				archivo << "N√öM. DE ART√çCULO: ";
 				datosnumeros = articulo[i].numeroarticulo;
 				archivo << datosnumeros;
 
-				archivo << " | ARTÕCULO: ";
+				archivo << " | ART√çCULO: ";
 				cadenas = articulo[i].nombre;
 				archivo << cadenas << "\n";
 
-				archivo << "A—O: ";
+				archivo << "A√ëO: ";
 				datosnumeros = articulo[i].fecha;
 				archivo << datosnumeros;
 
-				archivo << " | G…NERO: ";
+				archivo << " | G√âNERO: ";
 				cadenas = articulo[i].genaux;
 				archivo << cadenas;
 
-				archivo << " | CLASIFICACI”N:";
+				archivo << " | CLASIFICACI√ìN:";
 				cadenas = articulo[i].clasaux;
 				archivo << cadenas;
 
@@ -721,11 +721,11 @@ void archivos()
 				cadenas = articulo[i].consaux;
 				archivo << cadenas << "\n";
 
-				archivo << "DESCRIPCI”N: ";
+				archivo << "DESCRIPCI√ìN: ";
 				cadenas = articulo[i].descripcion;
 				archivo << cadenas << "\n";
 
-				archivo << "CARACTERÕSTICAS: ";
+				archivo << "CARACTER√çSTICAS: ";
 				cadenas = articulo[i].caracteristicas;
 				archivo << cadenas << "\n";
 
