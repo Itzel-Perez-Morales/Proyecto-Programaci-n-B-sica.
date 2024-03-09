@@ -1,5 +1,5 @@
 /*
-  AVANCE 1. Itzel AnahÌ PÈrez Morales. 2001877
+  AVANCE 1. Itzel Anah√≠ P√©rez Morales.
 */
 #include <iostream>
 #include <string>
@@ -13,12 +13,12 @@ int main() {
 	float precio, impuesto = 1.16;
 	char nombre[100], descripcion[100], consola[100];
 
-	cout << "\t ∞*| MENU DE OPCIONES |*∞ \n 1. Alta de articulos\n 2. Baja de articulos\n 3. Modificacion de articulos\n 4. Lista de productos\n 5. Limpiar pantalla\n 6. Salir\n"; cin >> op;
+	cout << "\t ¬∞*| MENU DE OPCIONES |*¬∞ \n 1. Alta de articulos\n 2. Baja de articulos\n 3. Modificacion de articulos\n 4. Lista de productos\n 5. Limpiar pantalla\n 6. Salir\n"; cin >> op;
 
 	switch (op) {
 	case 1: //ALTA DE PRODUCTO
 		cout << "| Ingrese el nombre del articulo: "; cin >> nombre;
-		cout << "| Describa el juego (Categoria): "; cin >> descripcion; //A˙n no puede tomarse una descripciÛn ya que la variable est· definida como char
+		cout << "| Describa el juego (Categoria): "; cin >> descripcion; //A√∫n no puede tomarse una descripci√≥n ya que la variable est√° definida como char
 		cout << "| Consola compatible: "; cin >> consola;
 		cout << "| Precio unitario: "; cin >> precio;
 
@@ -48,7 +48,7 @@ int main() {
 	case 2: //BAJA DE PRODUCTO 
 		break;
 
-	case 3: //MODIFICACI”N DE PRODUCTO
+	case 3: //MODIFICACI√ìN DE PRODUCTO
 		break;
 
 	case 4: //LISTA DE PRODUCTOS
@@ -63,7 +63,7 @@ int main() {
 		exit(1);
 		break;
 
-	default: //N⁄MERO INV¡LIDO INGRESADO
+	default: //N√öMERO INV√ÅLIDO INGRESADO
 		cout << "(!) ERROR: Opcion invalida\n";
 		return main();
 		break;
