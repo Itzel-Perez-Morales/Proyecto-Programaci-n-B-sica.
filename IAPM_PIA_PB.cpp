@@ -1,5 +1,5 @@
 /*
-PRODUCTO INTEGRADOR DE APRENDIZAJE. Itzel Anahí Pérez Morales. 2001877
+PRODUCTO INTEGRADOR DE APRENDIZAJE. Itzel Anahí Pérez Morales.
 */
 
 #include <iostream> 
