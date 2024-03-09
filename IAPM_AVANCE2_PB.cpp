@@ -1,5 +1,5 @@
 /*
-  AVANCE 2. Itzel AnahÌ PÈrez Morales. 2001877
+  AVANCE 2. Itzel Anah√≠ P√©rez Morales.
 */
 
 #include <iostream>
@@ -8,14 +8,14 @@
 
 using namespace std;
 
-struct informacion //Guardar· los datos solicitados en el punto 1
+struct informacion //Guardar√° los datos solicitados en el punto 1
 {
 	int numeroarticulo = 0;
 	char nombre[100];
 	string descripcion, consola;
 	float precio;
 
-} articulo; // articulo es la variable que llamar· y almacenar· las variables de la estructura
+} articulo; // articulo es la variable que llamar√° y almacenar√° las variables de la estructura
 
 int opcionuno(informacion articulo[3], float impuesto);
 
@@ -25,10 +25,10 @@ int main()
 {
 	float impuesto = 1.16;
 	int op = 0;
-	int numeroarticuloaux = 0; //Esta es para llevar un conteo de la variable "numeroarticulo" que est· en informaciÛn, sin esta numero de articulo siempre serÌa uno
+	int numeroarticuloaux = 0; //Esta es para llevar un conteo de la variable "numeroarticulo" que est√° en informaci√≥n, sin esta numero de articulo siempre ser√≠a uno
 	int opcasouno = 0; 
 
-	informacion articulo[3]; //llamada a la estructura y asignaciÛn del n˙mero de datos que guardar·
+	informacion articulo[3]; //llamada a la estructura y asignaci√≥n del n√∫mero de datos que guardar√°
 	do 
 	{
 		printf("\t *.-| MENU DE OPCIONES |-.* \n 1. Alta de articulos\n 2. Baja de articulos\n 3. Modificacion de articulos\n 4. Lista de productos\n 5. Limpiar pantalla\n 6. Salir\n"); scanf_s("%d", &op); 
@@ -71,7 +71,7 @@ int main()
 		case 2: //BAJA DE PRODUCTO 
 			break;
 
-		case 3: //MODIFICACI”N DE PRODUCTO
+		case 3: //MODIFICACI√ìN DE PRODUCTO
 			break;
 
 		case 4: //LISTA DE PRODUCTOS
@@ -93,7 +93,7 @@ int main()
 			exit(0);
 			break;
 
-		default: //N⁄MERO INV¡LIDO INGRESADO
+		default: //N√öMERO INV√ÅLIDO INGRESADO
 			printf("(!) ERROR: Opcion invalida \n\n");
 			break;
 
